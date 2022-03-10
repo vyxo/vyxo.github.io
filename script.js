@@ -1,4 +1,5 @@
 const fonts = document.getElementsByClassName('f')
+const headers = document.getElementsByClassName('smooth')
 
 setTimeout(() => {
   let elems = fonts.length
@@ -28,7 +29,6 @@ window.addEventListener('scroll', easeScroll);
 
 
 function easeScroll() {
-  
   sx = window.pageXOffset;
   sy = window.pageYOffset;
 }

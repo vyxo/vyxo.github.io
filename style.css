@@ -5,6 +5,8 @@
   --darker: #2f3136;
   --darkest: #202225;
   --blurple: #5865f2;
+  --blue: #3498DB;
+  --bright: #ffffff80;
 }
 
 * {
@@ -101,6 +103,12 @@ nav {
 .vyxo {
   font-size: 2vw;
   letter-spacing: 0.25vw;
+  transition-duration: 0.25s;
+  transition-property: transform;
+}
+
+.vyxo:hover {
+  transform: scale(1.1);
 }
 
 .vyxo-wrapper {
@@ -110,21 +118,31 @@ nav {
 }
 
 a {
-  color: var(--blurple);
+  color: var(--blue);
   text-decoration: none;
   font-weight: inherit;
-  transition-duration: 0.2s;
+  transition-duration: 0.25s;
   transition-property: color;
 }
 
 a:hover {
-  color: #6673ff;
+  color: var(--light);
 }
 
 .smooth {
   color: var(--light);
   padding: 0 2vw;
   height: 100%;
+  background-image: linear-gradient(to right, var(--blurple), var(--blurple));
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 0% 10%;
+  transition-property: background-size;
+}
+
+.smooth:hover {
+  color: var(--light);
+  background-size: 100% 10%;
 }
 
 button {
@@ -136,6 +154,18 @@ button {
   background: var(--blurple);
   color: white;
   cursor: pointer;
+  background-color: var(--blurple);
+  background-image: linear-gradient(to right, var(--bright), var(--bright));
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 0% 100%;
+  transition-duration: 0.25s;
+  transition-property: background-size, transform;
+}
+
+button:hover {
+  /* background-size: 100% 100%; */
+  transform: scale(1.1);
 }
 
 .buttons {
@@ -179,6 +209,7 @@ span.title {
 p {
   font-size: 1vw;
   color: var(--grey);
+  line-height: 1.5vw;
 }
 
 strong {
