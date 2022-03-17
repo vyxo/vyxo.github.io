@@ -1,12 +1,12 @@
 :root {
   --light: #fff;
-  --grey: #ddd;
+  --grey: #f8f8f8;
   --dark: #36393f;
   --darker: #2f3136;
   --darkest: #202225;
   --blurple: #5865f2;
   --blue: #3498DB;
-  --bright: #ffffff80;
+  --bright: #ffffff40;
 }
 
 * {
@@ -26,8 +26,8 @@ body {
   padding: 0;
   font-family: 'Leon', sans-serif;
   font-size: 1vw;
-  color: var(--light);
-  background: var(--darkest);
+  color: var(--dark);
+  background: var(--light);
 }
 
 #app {
@@ -37,6 +37,10 @@ body {
 @font-face {
   font-family: 'Leon';
   src: url('leon-med.otf');
+}
+
+span {
+  font-family: 'Leon', 'Product Sans', sans-serif;
 }
 
 .f {
@@ -85,7 +89,7 @@ body {
 }
 
 nav {
-  background: var(--darkest);
+  background: transparent;
   height: 4vw;
   padding: 0 10%;
   width: 100%;
@@ -93,6 +97,7 @@ nav {
   overflow: hidden;
   position: absolute;
   top: 0;
+  z-index: 1;
 }
 
 #navigation {
@@ -101,10 +106,15 @@ nav {
 }
 
 .vyxo {
+  height: 100%;
+  display: flex;
+  align-items: center;
   font-size: 2vw;
   letter-spacing: 0.25vw;
   transition-duration: 0.25s;
-  transition-property: transform;
+  transition-property: transform, opacity;
+  cursor: pointer;
+  color: var(--light);
 }
 
 .vyxo:hover {
@@ -113,12 +123,11 @@ nav {
 
 .vyxo-wrapper {
   height: 100%;
-  cursor: pointer;
   width: 20vw;
 }
 
 a {
-  color: var(--blue);
+  color: var(--blurple);
   text-decoration: none;
   font-weight: inherit;
   transition-duration: 0.25s;
@@ -126,14 +135,14 @@ a {
 }
 
 a:hover {
-  color: var(--light);
+  color: var(--darkest);
 }
 
 .smooth {
   color: var(--light);
   padding: 0 2vw;
   height: 100%;
-  background-image: linear-gradient(to right, var(--blurple), var(--blurple));
+  background-image: linear-gradient(to right, var(--light), var(--light));
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 0% 10%;
@@ -152,20 +161,22 @@ button {
   padding: 0.75vw 1.5vw;
   border-radius: 0.25vw;
   background: var(--blurple);
-  color: white;
+  color: var(--light);
   cursor: pointer;
-  background-color: var(--blurple);
-  background-image: linear-gradient(to right, var(--bright), var(--bright));
+  background-color: var(--dark);
+  background-image: linear-gradient(to right, var(--light), var(--light));
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: left center;
   background-size: 0% 100%;
   transition-duration: 0.25s;
-  transition-property: background-size, transform;
+  transition-property: background-size, color;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 button:hover {
-  /* background-size: 100% 100%; */
-  transform: scale(1.1);
+  color: var(--blurple);
+  background-size: 100% 100%;
 }
 
 .buttons {
@@ -178,17 +189,62 @@ button:hover {
 }
 
 .banner {
-  background: var(--darkest);
+  /* position: relative; */
+  background: var(--blurple);
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+}
+
+.reveal-load {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: translate(0, 0);
+  animation: reveal-load 2.5s;
+}
+
+.hero-text {
+  margin-top: 1vw;
+  color: var(--light);
+  font-size: 2vw;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+  width: 50vw;
+}
+
+.punch {
+  font-size: 4vw;
+  color: var(--light);
 }
 
 section {
   width: 80%;
+  min-height: 20vw;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   padding: 5vw 10vw;
-  background: var(--dark)
+  background: var(--light)
+}
+
+section.alt {
+  background: var(--grey);
 }
 
 .content {
@@ -203,17 +259,17 @@ section {
 }
 
 span.title {
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 p {
-  font-size: 1vw;
-  color: var(--grey);
+  font-size: 1.25vw;
+  color: var(--dark);
   line-height: 1.5vw;
 }
 
 strong {
-  color: white;
+  color: var(--darkest);
 }
 
 .graphics {
@@ -227,4 +283,19 @@ strong {
 
 .bg-dark {
   background: var(--dark);
+}
+
+@keyframes reveal-load {
+  0% {
+    transform: translate(0, 4vw);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  60% {
+    transform: translate(0, 4vw);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  100% {
+    transform: translate(0, 0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
