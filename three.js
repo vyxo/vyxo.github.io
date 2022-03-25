@@ -31,7 +31,7 @@ document.querySelector('#dimension').appendChild( renderer.domElement )
 const make = {
   cube: (a, b, c, mat) => {
     const geometry = new THREE.BoxGeometry(a, b, c)
-    const material = new THREE.MeshBasicMaterial(mat)
+    const material = new THREE.MeshPhongMaterial(mat)
     const cube = new THREE.Mesh( geometry, material )
     return cube
   },
@@ -81,6 +81,10 @@ function render() {
 }
 
 let shapes = []
+
+const light = new THREE.PointLight( 0x5865F2, 1, 100 )
+light.position.set( 0, 0, 0 )
+scene.add( light )
 
 let tracker = make.tracker(1, 1, 1, { color: 0x2F3136 })
 tracker.material.opacity = 0
