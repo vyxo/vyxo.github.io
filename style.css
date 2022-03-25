@@ -1,6 +1,6 @@
 :root {
   --light: #fff;
-  --grey: #f8f8f8;
+  --grey: #f2f2f2;
   --dark: #36393f;
   --darker: #2f3136;
   --darkest: #202225;
@@ -13,7 +13,7 @@
   opacity: 1;
   transition-duration: 0.5s;
   transition-property: opacity;
-  font-family: 'Leon'
+  font-family: 'Leon';
 }
 
 *::selection {
@@ -40,7 +40,7 @@ body {
 }
 
 span {
-  font-family: 'Leon', 'Product Sans', sans-serif;
+  font-family: 'Leon', sans-serif;
 }
 
 .f {
@@ -198,6 +198,12 @@ button:hover {
   align-items: center;
   user-select: none;
   -webkit-user-select: none;
+}
+
+#dimension {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .hero-wrapper {

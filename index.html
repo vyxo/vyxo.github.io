@@ -6,7 +6,7 @@
   
     <title>Vyxo</title>
     <meta name="description" content="Design. Develop. Deliver.">
-    <meta name="author" content="Vyxo">
+    <meta name="author" content="Vyxo"> 
   
     <meta property="og:title" content="Vyxo">
     <meta property="og:type" content="website">
@@ -17,7 +17,7 @@
     <!-- <link rel="icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
-  
+    <script src="https://cdn.jsdelivr.net/npm/ripplet.js@1.1.0"></script>
     <link rel="stylesheet" href="style.css">
   
   </head>
@@ -43,11 +43,14 @@
           </a>
         </div>
         <div class="buttons flex jc-end ai-center reveal-load">
-          <button>Login</button>
-          <button>Register</button>
+          <button onpointerdown="ripplet(arguments[0], { clearing: false })" onpointerup="ripplet.clear(this)" onpointerleave="ripplet.clear(this)">Login</button>
+          <button onpointerdown="ripplet(arguments[0], { clearing: false })" onpointerup="ripplet.clear(this)" onpointerleave="ripplet.clear(this)">Register</button>
         </div>
       </nav>
       <div class="banner">
+        <div id="dimension">
+
+        </div>
         <div class="hero-wrapper reveal-load">
           <div class="hero">
             <span class="punch">Design</span>
@@ -62,7 +65,7 @@
           <div class="writing">
             <span class="title">About</span>
             <p class="f">
-              I am just <em>another</em> web developer in this universe. Other than a bit of <strong>JavaScript</strong> knowledge, I am pretty useless. You can find me on <a href="https://github.com/vyxo/" target="_blank">GitHub</a>, <a href="https://discord.gg/T53wbpsScu" target="_blank">Discord</a> and some other sites!
+              I am just <em>another</em> web developer in this universe. Other than a bit of <strong>JavaScript</strong> knowledge, I am pretty useless. You can find me on <a href="https://github.com/vyxo/" target="_blank">GitHub</a>, <a href="https://discord.gg/DMZky8mF" target="_blank">Discord</a> and some other sites!
             </p>
           </div>
           <div class="graphics">
@@ -70,7 +73,7 @@
           </div>
         </div>
       </section>
-      <section id="projects" class="alt">
+      <section id="projects" class="">
         <div class="content">
           <div class="graphics">
             
@@ -78,7 +81,7 @@
           <div class="writing">
             <span class="title">Projects</span>
             <p class="f">
-              There is nothing to see here... yet!
+              One of my hobbies is making NPM packages for JavaScript developers around the world. I aim to make node.js apps <strong>easier</strong> and <strong>faster</strong> to build while solving some common issues on Replit.  
             </p>
           </div>
         </div>
@@ -88,7 +91,7 @@
           <div class="writing">
             <span class="title">Support</span>
             <p class="f">
-              I always appreciate followers and new members on my <a href="https://discord.gg/T53wbpsScu" target="_blank">discord server</a>!
+              I always appreciate followers and new members on my <a href="https://discord.gg/DMZky8mF" target="_blank">server</a>!
             </p>
           </div>
           <div class="graphics">
@@ -96,7 +99,7 @@
           </div>
         </div>
       </section>
-      <section id="contact" class="alt">
+      <section id="contact" class="">
         <div class="content">
           <div class="graphics">
             
@@ -110,6 +113,7 @@
         </div>
       </section>
     </div>
+    <script type="module" src="three.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
