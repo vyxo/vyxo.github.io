@@ -99,8 +99,10 @@ dust(16, 5, 10, 15, 20)
 render()
 
 function follow(e, w, h) {
-  target.x = (e.x - w / 2) * -0.25
-  target.y = (e.y - h / 2) * -0.25
+  let x = ((e.x/w) - 1/2) * 2
+  let y = ((e.y/h) - 1/2) * 2
+  target.x = x * -100
+  target.y = y * -100
 }
 
 function each() {

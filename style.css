@@ -88,6 +88,10 @@ span {
   align-items: center;
 }
 
+.graphics img {
+  width: 35vw;
+}
+
 nav {
   background: transparent;
   height: 4vw;
@@ -241,11 +245,11 @@ button:hover {
 
 section {
   width: 80%;
-  min-height: 20vw;
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 5vw 10vw;
+  padding: 0 10vw;
   background: var(--light)
 }
 
@@ -258,6 +262,7 @@ section.alt {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
 }
 
 .writing {
@@ -280,7 +285,7 @@ strong {
 
 .graphics {
   width: 35vw;
-  height: 5vw;
+  
 }
 
 .bg-darker {
@@ -289,6 +294,15 @@ strong {
 
 .bg-dark {
   background: var(--dark);
+}
+
+footer {
+  background: var(--darkest);
+  color: white;
+  display: flex;
+  width: 80%;
+  padding: 0 10vw;
+  min-height: 50vh;
 }
 
 @keyframes reveal-load {
