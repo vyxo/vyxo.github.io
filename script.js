@@ -1,5 +1,5 @@
 const fades = document.getElementsByClassName('f')
-const headers = document.getElementsByClassName('smooth')
+const headers = document.querySelectorAll('.jump')
 
 setTimeout(() => {
   let elems = fades.length
